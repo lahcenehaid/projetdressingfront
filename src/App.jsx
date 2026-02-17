@@ -15,6 +15,12 @@ function App() {
         <button classname="btn" type="submit">Ajouter</button>
       </form>
     </header>
+    <h2 classname="namelist">My Dressing</h2>
+    <script type="module" src="/src/main.jsx"></script>
+    <footer>
+      <p>&copy; 2026 My dressing Page</p>
+    </footer>
+
     </>
   )
 }
