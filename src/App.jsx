@@ -18,8 +18,10 @@ function App() {
   ];
 
   const filteredCards = cards.filter(card =>
-    card.title.toLowerCase().includes(search.toLowerCase())
-  );
+  card.title.toLowerCase().includes(search.toLowerCase()) ||
+  card.description.toLowerCase().includes(search.toLowerCase())
+);
+
 
   return (
     <>
