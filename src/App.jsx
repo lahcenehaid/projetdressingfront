@@ -38,8 +38,8 @@ function App() {
 
       <header className="title">
         <h1 className="text-6xl font-extrabold text-center mb-8 tracking-tight">
-  My Cloudy Dressing ☁️
-</h1>
+            ☁️ My Cloudy Dressing ☁️
+        </h1>
 
 
         <form className="flex justify-center items-center gap-2">
