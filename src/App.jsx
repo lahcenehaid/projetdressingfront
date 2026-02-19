@@ -18,29 +18,53 @@ function App() {
   ];
 
   const filteredCards = cards.filter(card =>
-  card.title.toLowerCase().includes(search.toLowerCase()) ||
-  card.description.toLowerCase().includes(search.toLowerCase())
-);
-
+    card.title.toLowerCase().includes(search.toLowerCase()) ||
+    card.description.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
-    <>
+    <div className="relative min-h-screen">
+
+{/* Background flou */}
+<div
+  className="absolute inset-0 bg-cover bg-center blur-sm -z-10"
+  style={{ backgroundImage: "url('/cloudy.png')" }}
+/>
+
+
+{/* Overlay plus léger */}
+<div className="absolute inset-0 bg-white/30 -z-10" />
+
+
       <header className="title">
-        <h1> My Cloudy Dressing</h1>
-        <form className="addClothes" action="/traitement" method="post">
+        <h1 className="text-6xl font-extrabold text-center mb-8 tracking-tight">
+  My Cloudy Dressing ☁️
+</h1>
+
+
+        <form className="flex justify-center items-center gap-2">
           <input
             type="text"
             placeholder="Rechercher un vêtement"
             value={search}
             onChange={e => setSearch(e.target.value)}
+            className="p-2 border rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button className="btn" type="submit">Ajouter</button>
+
+          <button
+            type="submit"
+            className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+          >
+            Ajouter
+          </button>
         </form>
       </header>
 
-      <h2 className="namelist">My Dressing</h2>
+      <h2 className="text-3xl font-bold text-center mt-8 mb-6">
+        My Dressing
+      </h2>
 
-      <main>
+      <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
         {filteredCards.map(card => (
           <Card
             key={card.id}
@@ -51,10 +75,11 @@ function App() {
         ))}
       </main>
 
-      <footer>
+      <footer className='text-center py-6'>
         <p>&copy; 2026 My dressing Page</p>
       </footer>
-    </>
+
+    </div>
   )
 }
 
