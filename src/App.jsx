@@ -7,12 +7,12 @@ function App() {
   const [search, setSearch] = useState("")
   const [showInput, setShowInput] = useState(false)
 
-  // ✅ états pour le formulaire d'ajout
+  // formulaire d'ajout
   const [newTitle, setNewTitle] = useState("")
   const [newDescription, setNewDescription] = useState("")
   const [newImage, setNewImage] = useState("")
 
-  // ✅ cards en state (modifiable)
+  // cards en state 
   const [cards, setCards] = useState([
     { id: 1, title: "Bas Jogging Stone island", description: "Bas de jogging 100% cotton", image: "https://hh84n94hcl.ufs.sh/f/GM7nKIBBdnSQBcVcFSyayKH0ptNIURXdOnf71J4GMZqe8WhP" },
     { id: 2, title: "Veste sans manches Stone island", description: "Veste sans manches technique", image: "https://hh84n94hcl.ufs.sh/f/GM7nKIBBdnSQbHmsk672dVrRhKQaPyYNnjz0lX1gDk4EiMLB" },
@@ -28,7 +28,7 @@ function App() {
     card.description.toLowerCase().includes(search.toLowerCase())
   )
 
-  // ✅ Ajouter une carte
+  // Ajouter une carte
   const handleAdd = () => {
     if (!newTitle.trim()) return
 
@@ -48,7 +48,7 @@ function App() {
     setShowInput(false)
   }
 
-  // ✅ Supprimer une carte
+  // Supprimer une carte
   const handleDelete = (id) => {
     setCards(prev => prev.filter(card => card.id !== id))
   }
@@ -117,7 +117,7 @@ function App() {
                 className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
 
-              {/* ✅ boutons sous les inputs */}
+              {/* boutons sous les inputs */}
               <div className="flex gap-3 pt-2">
                 <button
                   type="button"
